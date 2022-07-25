@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jogo da Forca Multiplayer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <body>
+        <div class="options">
+            <div class="titleGame">
+                Jogo da Forca Multiplayer
+            </div>
+            <div class="infoPlayer">
+                <input type="text" class="txtInput" id="txtNamePlayer" placeholder="Nome">
+            </div>
+            <div class="joinRoom">
+                <input type="text" class="txtInput" id="txtRoomIdEnter" placeholder="Código da Sala">
+                <button class="btn" onclick="enterRoom()">Entrar na sala</button>
+            </div>
+            <div class="createRoom">
+                <input type="text" class="txtInput" id="txtRoomIdCreated" placeholder="Crie um código">
+                <button class="btn" onclick="createRoom()">Criar uma sala</button>
+            </div>
+        </div>
+        <div class="game">
+            <div class="game-container">
+                <span id="codeRoom"></span>
+                <div class="game-chat">
+                    <ul class="ul" id="messages"></ul>
+                </div>
+                <div class="controls-chat">
+                    <input type="text" class="txtInput" id="txtNewMessageChat"/>
+                    <button class="btn" id="btnSendMessageChat" onclick="sendMessageChat()">Enviar</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
